@@ -136,7 +136,34 @@ State Machine Function Definitions
 /* Wait for ??? */
 static void UserApp1SM_Idle(void)
 {
-
+  static u16 u16counter=0;
+  static bool bLightOn=TRUE;
+  static LedRateType eRate=LED_PWM_0;
+  
+  u16counter++;
+  if(u16counter==40)
+  {
+    u16counter=0;
+    if(bLightOn)
+    {
+      eRate++;        
+      if(eRate==LED_PWM_100)
+      {
+        bLightOn=!bLightOn;
+      }
+    }
+      else 
+      {
+        eRate--;
+        if(eRate==LED_PWM_0)
+        {
+          bLightOn=!bLightOn;
+        }
+      }
+      LedPWM(RED,(LedRateType)(eRate));
+  }
+      
+  
 } /* end UserApp1SM_Idle() */
     
 
