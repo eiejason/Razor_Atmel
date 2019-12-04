@@ -7,4 +7,4 @@ doxygen
 EIE-Purple-Logo.jpg
 settings/
 *.dbgdt
-*wsdt
+*.wsdt
