@@ -87,7 +87,7 @@ Promises:
 */
 void UserApp1Initialize(void)
 {
- 
+  LedOn(BLUE);
   /* If good initialization, set state to Idle */
   if( 1 )
   {
@@ -136,7 +136,28 @@ State Machine Function Definitions
 /* Wait for ??? */
 static void UserApp1SM_Idle(void)
 {
+  static u16 u16counter=0;
+  static u16 u16cnt=1024;
+  static u16 u16cnt1=0;
+   
+  u16cnt1++;
+  if(u16cnt1==u16cnt)
+  {
+    u16cnt1=0;
 
+    u16counter++;
+    if(u16counter==5)
+    {
+      u16counter=0;
+      
+      u16cnt=u16cnt>>1;
+      if(u16cnt==1)
+      {
+        u16cnt=1024;
+      }
+    }      
+    LedToggle(BLUE);
+  }      
 } /* end UserApp1SM_Idle() */
     
 
