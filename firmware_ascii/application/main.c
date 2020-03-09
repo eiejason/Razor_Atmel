@@ -74,7 +74,6 @@ void main(void)
   UserApp1Initialize();
   UserApp2Initialize();
   UserApp3Initialize();
-  /*add one line code*/
 
   
   /* Exit initialization */
