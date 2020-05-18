@@ -41,8 +41,6 @@ the 1ms period.
 
 void main(void)
 {
-  //add one line
-  
   G_u32SystemFlags |= _SYSTEM_INITIALIZING;
 
   /* Low level initialization */
@@ -76,6 +74,7 @@ void main(void)
   UserApp1Initialize();
   UserApp2Initialize();
   UserApp3Initialize();
+
   
   /* Exit initialization */
   SystemStatusReport();
